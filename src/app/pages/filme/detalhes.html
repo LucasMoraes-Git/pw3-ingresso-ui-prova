@@ -56,7 +56,7 @@
               </tr>
             </thead>
             <tbody>
-              @for (sessao of listaSessoes; track sessao.id) {
+              @for (sessao of (sessoes | async) ?? []; track sessao.id) {
                 <tr>
                   <td> sessao.sala </td>
                   <td>{{ sessao.horario }}</td>

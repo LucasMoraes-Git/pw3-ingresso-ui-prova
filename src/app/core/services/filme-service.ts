@@ -13,6 +13,11 @@ export class FilmeService {
   findCartaz(): Observable<Filme[]>{
     return this.http.get<Filme[]>(`${this.apiUrl}/em-cartaz`);
   }
+
+  findName(nomeFilme: string): Observable<Filme>
+  {
+    return this.http.get<Filme>(`${this.apiUrl}/buscarNome/${nomeFilme}`);
+  }
   
   //findById(id: Number): Observable<Filme>{
   //  return null;
